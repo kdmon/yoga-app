@@ -1,0 +1,290 @@
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script>
+      var words = [{
+        "class": "posture",
+        "english": "Mountain Pose",
+        "sanskrit": "Tadasana",
+        "image": "",
+        "benefits": "Brings lightness to the body.Relieves tension in back and shoulders",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Cat Pose",
+        "sanskrit": "Marjaryasana",
+        "image": "http://www.healtouch.com/yoga/cat.jpg",
+        "benefits": "Brings flexibility to the spine, strengthens wrists and shoulders, massages the digestive organs and improves digestion",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Dog Pose",
+        "sanskrit": "Adho Mukha Svanasana",
+        "image": "dogpose.jpg",
+        "benefits": "Calms the brain, energises the body, helps relieve fatigue",
+        "audio": "adhomukhasvanasana"
+      }, {
+        "class": "posture",
+        "english": "Triangle",
+        "sanskrit": "Trikonasana",
+        "image": "http://yoga.org.nz/postures/images/mainpage/triangle.jpg",
+        "benefits": "Brings stability and firmness to body and mind",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Reverse triangle",
+        "sanskrit": "Parivrtta Trikonasana",
+        "image": "http://health.indianetzone.com/yoga/hathyoga/images/hathyoga_091.jpg",
+        "benefits": "Increases flexibilty of the hips and spine, opens rib-cage,chest and heart",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Cobbler pose",
+        "sanskrit": "Baddha Konasana",
+        "image": "cobblerpose.jpg",
+        "benefits": "Brings life to the feet, eases the hips, lengthens the spine and neck",
+        "audio": "badhakonasanaedited"
+      }, {
+        "class": "posture",
+        "english": "Warrior 2",
+        "sanskrit": "Virabhadrasana",
+        "image": "",
+        "benefits": "Strengthens the legs , energises the whole person",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Hero Pose",
+        "sanskrit": "Virasana",
+        "image": "",
+        "benefits": "Gives strength and flexibilty to the ankles, allows the spine to align without strain",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Camel Pose",
+        "French": "",
+        "sanskrit": "Ustrasana",
+        "image": "",
+        "benefits": "",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Warrior 1",
+        "sanskrit": "Virabhadrasana",
+        "image": "",
+        "benefits": "Strengthens the legs ,opens the front of the body, energises the whole person",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Bridge",
+        "sanskrit": "Setu Bandha Sarvangasana",
+        "image": "http://www.yogason.com/setubandhasan.jpg",
+        "benefits": "Brings movement through whole body, opens up solar plexus",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Tree pose",
+        "sanskrit": "Vrkasana",
+        "image": "",
+        "benefits": "Improves balance, brings calmness to mind and body",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Cobra pose",
+        "sanskrit": "Bhujangasana",
+        "image": "http://upload.wikimedia.org/wikipedia/commons/2/21/Bhujangasana.jpg",
+        "benefits": "Strengthens the back , opens front of body and chest",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Sun Salutation",
+        "sanskrit": "Surya Namaskar",
+        "video": "http://upload.wikimedia.org/wikipedia/commons/a/a3/Surya_namaskar.ogg",
+        "benefits": "Wakes up the whole body, increases mobility to hips and legs",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Peacock",
+        "sanskrit": "Pincha Mayurasana",
+        "image": "",
+        "benefits": "Wakens the spine, brings aliveness to the body",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Shoulderstand",
+        "sanskrit": "Salamba Sarvangasana",
+        "image": "",
+        "benefits": "Brings balance and harmony to whole body",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Half-Moon Pose",
+        "French": "Find",
+        "sanskrit": "Ardha Chandrasana",
+        "image": "http://www.eastclareyoga.com/info/info/postures_files/ardha-chand",
+        "benefits": "Strengthens legs, improves balance, opens front of body",
+        "audio": ""
+      }, {
+        "class": "posture",
+        "english": "Child Pose",
+        "sanskrit": "Pindasana",
+        "image": "http://www.divernetxtra.com/technique/pics/0404yoga2.jpg",
+        "benefits": "Rests the back, allows the abdomen to soften and the spine lengthen",
+        "audio": ""
+      }];
+
+      function showPosture(wordIndex) {
+        // this updates the words details page
+        var translation = "<h1 style='color:red'>" + words[wordIndex].english + "</h1>";
+        if (words[wordIndex].French) {
+          translation += "<h2 style='color:green'>" + words[wordIndex].French + "</h2>";
+        }
+        if (words[wordIndex].sanskrit) {
+          translation += "<h2 style='color:blue'>" + words[wordIndex].sanskrit + "</h2>";
+        }
+        if (words[wordIndex].image) {
+          translation += '<img width="100%" src="images/' + words[wordIndex].image + '">';
+        }
+        if (words[wordIndex].video) {
+          translation += '<iframe src="' + words[wordIndex].video + '">';
+        }
+        if (words[wordIndex].benefits) {
+          translation += "<h3 style='color:purple'>" + words[wordIndex].benefits + "</h3>";
+        }
+        if (words[wordIndex].audio) {
+          translation += "<audio controls>";
+          translation += '<source src="audio/' + words[wordIndex].audio + '.mp3" type="audio/mpeg">';
+          translation += '<source src="audio/' + words[wordIndex].audio + '.ogg" type="audio/ogg">';
+          translation += "Your browser does not support the audio element.";
+          translation += "</audio>";
+        }
+        var wordContainer = document.getElementById("wordDetails");
+        wordContainer.innerHTML = translation;
+        // this opens the word details page
+        $.mobile.changePage('#item', {
+          role: 'dialog'
+        });
+      }
+
+      function sortByKey(array, key) {
+        return array.sort(function(a, b) {
+          var x = a[key];
+          var y = b[key];
+          return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+      }
+      words = sortByKey(words, 'english');
+      $("#list").live("pageinit", function(event) {
+        $("#wordList").append('<li data-role="list-divider">Yoga postures  </li>');
+        for (i = 0; i < words.length; i++) {
+          $("#wordList").append('<li><a data-role="button" href="javascript: showPosture(' + i + ');"><img data-icon="true" src="images/' + words[i].image + '">' + words[i].english + "<br>" + words[i].sanskrit + '</a></li>');
+        }
+        // this makes sure the buttons are styled
+        $("#wordList").listview("refresh");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div data-role="page" id="frontpage">
+      <div data-role="header">
+        <h1>Irene's Yoga App</h1>
+      </div>
+      <div data-role="content">
+        <img src="images/applogo.png" style="width:100%"> <a data-role="button" href="#Menu">Start</a>
+      </div>
+    </div>
+    <div data-role="page" id="Menu">
+      <div data-role="header">
+        <h1>Irene's Yoga App</h1>
+      </div>
+      <div data-role="content">
+        <a data-role="button" href="#Dictionary">
+          <h3>Postures</h3>
+        </a>
+        <a data-role="button" href="#Relaxation">
+          <h3>Guided Relaxation</h3>
+        </a>
+        <a data-role="button" href="#About">
+          <h3>About the App</h3>
+        </a>
+        <a data-role="button" href="#Meditation">
+          <h3>Guided Meditation</h3>
+        </a> <a href="#" data-rel="back" data-role="button">Back to Start </a> 
+      </div>
+    </div>
+    <div data-role="page" id="About">
+      <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
+        <h1>About the App</h1>
+      </div>
+      <div data-role="content">This app has been developed for anyone who would like a short practice of yoga and relaxation.It is an ongoing project with future updates planned.</div>
+      <div data-role="footer">
+        <h1>&copy; I Beldon 2014</h1>
+      </div>
+    </div>
+    <div data-role="page" id="Relaxation">
+      <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
+        <h1>Guided Relaxations</h1>
+      </div>
+      <div data-role="content">Press the arrow to listen to the audio instructions . There will be some quiet time during the practice, this is done on purpose to allow you to rest and find your own silence within, just keep listening to the end.</div>
+      <div data-role="content">
+        <audio controls>
+          <source src="relaxation.ogg" type="audio/ogg">
+            <source src="relaxation.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+      </div>
+      <div data-role="footer">
+        <h1>&copy; I Beldon 2014</h1>
+      </div>
+    </div>
+    <div data-role="page" id="Meditation">
+      <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
+        <h1>Guided Meditation</h1>
+      </div>
+      <div data-role="content">This section is in development</div>
+      <div data-role="footer">
+        <h1>&copy; I Beldon 2014</h1>
+      </div>
+    </div>
+    <div data-role="page" id="Dictionary">
+      <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
+        <h1>Yoga Postures</h1>
+      </div>
+      <div data-role="content">
+        <h3>Getting started</h3>
+        <p>Select the Postures button which will show a list of yoga postures with the English and Sanskrit names</p>
+        <h3>About the posture</h3>
+        <p>There is a picture of the full posture plus the general benefits to the body that can be gained through practice</p>
+        <h3>Audio instructions</h3>
+        <p>Press the arrow to listen to instructions guiding you how to do the posture . Press the Back button to return to the list of postures</p> <a href="#list" data-role="button">Postures</a>
+      </div>
+    </div>
+    <div data-role="page" id="list">
+      <div data-role="header">
+        <h1>IRENE'S YOGA APP</h1> <a href="#" data-rel="back" data-role="button">Back</a>
+      </div>
+      <div data-role="content">
+        <ul data-role="listview" id="wordList" data-filter="true"></ul><a href="#" data-rel="back" data-role="button">Back</a>
+      </div>
+      <div data-role="footer">
+        <h1>&copy; I Beldon 2014</h1>
+      </div>
+    </div>
+    <div data-role="page" id="item">
+      <div data-role="header">
+        <h1>Posture</h1>
+      </div>
+      <div data-role="content">
+        <center>
+          <div id="wordDetails">Insert name and picture here</div>
+        </center> <a href="#" data-rel="back" data-role="button">Back</a>
+      </div>
+      <div data-role="footer">
+        <h1>&copy; I Beldon 2014</h1>
+      </div>
+    </div>
+  </body>
+
+</html>
