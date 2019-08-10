@@ -165,27 +165,34 @@
         <h1>Irene's Yoga App</h1>
       </div>
       <div data-role="content">
-        <img src="images/applogo.png" style="width:100%"> <a data-role="button" href="#Menu">Start</a>
-      </div>
-    </div>
-    <div data-role="page" id="Menu">
-      <div data-role="header">
-        <h1>Irene's Yoga App</h1>
-      </div>
-      <div data-role="content">
-        <a data-role="button" href="#Dictionary">
-          <h3>Postures</h3>
-        </a>
-        <a data-role="button" href="#Relaxation">
-          <h3>Guided Relaxation</h3>
-        </a>
-        <a style="display: none" data-role="button" href="#Meditation">
-          <h3>Guided Meditation</h3>
-        </a>
-        <a data-role="button" href="#About">
-          <h3>About the App</h3>
-        </a>
-        <a href="#" data-rel="back" data-role="button">Back to Start </a> 
+        <div style="width: 100%; text-align: center;">
+            <img src="images/applogo.png" style="width:100%; max-width: 480px;">
+            <a data-role="button" href="#list">
+              <h3>Postures</h3>
+            </a>
+            <a data-role="button" href="#Relaxation">
+              <h3>Guided Relaxations</h3>
+            </a>
+            <a data-role="button" href="#Summerschool">
+              <h3>Summer school: Going with the flow</h3>
+            </a>
+            <a style="display: none" data-role="button" href="#Meditation">
+              <h3>Guided Meditation</h3>
+            </a>
+            <p>
+              Irene Beldon is a yoga instructor currently dividing 
+              her time between France and the UK. You can reach her
+              at:
+              <a href="mailto:irenesyogaapp@gmail.com">
+                irenesyogaapp@gmail.com
+              </a>
+            </p>
+            <!--
+            <a data-role="button" href="#About">
+              <h3>About the App</h3>
+            </a>
+            -->
+        </div>
       </div>
     </div>
     <div data-role="page" id="About">
@@ -194,32 +201,83 @@
       </div>
       <div data-role="content">This app has been developed for anyone who would like a short practice of yoga and relaxation.It is an ongoing project with future updates planned.</div>
       <div data-role="footer">
-        <h1>&copy; I Beldon 2018</h1>
+        <h1>&copy; Irene Beldon 2019</h1>
       </div>
     </div>
+    
     <div data-role="page" id="Relaxation">
       <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
         <h1>Guided Relaxations</h1>
       </div>
-      <div data-role="content">Press the arrow to listen to the audio instructions . There will be some quiet time during the practice, this is done on purpose to allow you to rest and find your own silence within, just keep listening to the end.</div>
       <div data-role="content">
+        Press the arrow to listen to the audio instructions. There will be some
+        quiet time during the practice, this is done on purpose to allow you
+        to rest and find your own silence within, just keep listening to the end.
+      </div>
+      
+      <div data-role="content">
+        <h2>Finding the silence (5 minutes)</h2>
         <audio controls>
           <source src="audio/relaxation.ogg" type="audio/ogg">
-          <source src="audio/relaxation.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+          <source src="audio/relaxation.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        
+        <h2>Short Yoga Nidra (5 minutes)</h2>
+        <audio controls>
+          <source src="audio/short-yoga-nidra.ogg" type="audio/ogg">
+          <source src="audio/short-yoga-nidra.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        
+        <h2>Full Yoga Nidra (15 minutes)</h2>
+        <audio controls>
+          <source src="audio/full-yoga-nidra.ogg" type="audio/ogg">
+          <source src="audio/full-yoga-nidra.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        
       </div>
       <div data-role="footer">
-        <h1>&copy; I Beldon 2018</h1>
+        <h1>&copy; Irene Beldon 2019</h1>
       </div>
     </div>
-    <div data-role="page" id="Meditation">
+    
+    <div data-role="page" id="Summerschool">
+      
       <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
-        <h1>Guided Meditation</h1>
+        <h1>Summer school: Going with the flow</h1>
       </div>
-      <div data-role="content">This section is in development</div>
+      
+      <div data-role="content">
+        This page contains audio recordings taking you through
+        the two beginning Vinyasa sequences we covered during the
+        summer school.
+      </div>
+      
+      <div data-role="content">
+        
+        <h2>Greet the day (3 minutes)</h2>
+        
+        <audio controls>
+          <source src="audio/greet-the-day.ogg" type="audio/ogg">
+          <source src="audio/greet-the-day.mp3" type="audio/mpeg">Your browser does not support the audio element.
+       </audio>
+       
+        <h2>Personal Space (5 minutes)</h2>
+        
+        <audio controls>
+          <source src="audio/personal-space.ogg" type="audio/ogg">
+          <source src="audio/personal-space.mp3" type="audio/mpeg">Your browser does not support the audio element.
+       </audio>
+       
+      </div>
       <div data-role="footer">
-        <h1>&copy; I Beldon 2018</h1>
+        <h1>&copy; Irene Beldon 2019</h1>
       </div>
     </div>
+    
+    
     <div data-role="page" id="Dictionary">
       <div data-role="header"> <a href="#" data-rel="back" data-role="button">Back</a> 
         <h1>Yoga Postures</h1>
@@ -230,20 +288,25 @@
         <h3>About the posture</h3>
         <p>There is a picture of the full posture plus the general benefits to the body that can be gained through practice</p>
         <h3>Audio instructions</h3>
-        <p>Press the arrow to listen to instructions guiding you how to do the posture . Press the Back button to return to the list of postures</p> <a href="#list" data-role="button">Postures</a>
+        <p>Press the arrow to listen to instructions guiding you how to do the posture . Press the Back button to return to the list of postures</p>
+        <a href="#list" data-role="button">Postures</a>
       </div>
     </div>
+    
     <div data-role="page" id="list">
       <div data-role="header">
-        <h1>IRENE'S YOGA APP</h1> <a href="#" data-rel="back" data-role="button">Back</a>
+        <h1>Yoga Postures</h1> <a href="#" data-rel="back" data-role="button">Back</a>
       </div>
       <div data-role="content">
-        <ul data-role="listview" id="wordList" data-filter="true"></ul><a href="#" data-rel="back" data-role="button">Back</a>
+        <ul data-role="listview" id="wordList" data-filter="true"></ul>
+        <br>
+        <a href="#" data-rel="back" data-role="button">Back</a>
       </div>
       <div data-role="footer">
-        <h1>&copy; I Beldon 2018</h1>
+        <h1>&copy; Irene Beldon 2019</h1>
       </div>
     </div>
+    
     <div data-role="page" id="item">
       <div data-role="header">
         <h1>Posture</h1>
@@ -254,7 +317,7 @@
         </center> <a href="#" data-rel="back" data-role="button">Back</a>
       </div>
       <div data-role="footer">
-        <h1>&copy; I Beldon 2018</h1>
+        <h1>&copy; Irene Beldon 2019</h1>
       </div>
     </div>
   </body>
